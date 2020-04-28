@@ -5,7 +5,7 @@ while (num != null) {
     num = prompt("Введите число");
 
     if (!isNaN(num) && num != "") {
-        result += Number(num);
+        result += Number(prompt("Введите число"));
     }
 }
 
