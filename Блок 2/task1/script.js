@@ -3,11 +3,11 @@
 let firstNumber = prompt("Введите первое число:", "");
 let secondNumber = prompt("Введите второе число:", "");
 
-if ( isNaN(firstNumber) || isNaN(secondNumber) ) {
-    alert("Не число");
-} else if (firstNumber === "" || secondNumber === "") {
-    alert("Ничего не ввели");
-} else {
+function isNumber(num) {
+    return !isNaN(parseFloat(num)) && isFinite(num);
+}
+
+if (isNumber(firstNumber) && isNumber(secondNumber) && firstNumber != "" && secondNumber != "") {
     if (firstNumber === secondNumber) {
         alert("Числа равны");
     } else if (firstNumber < secondNumber) {
@@ -15,4 +15,6 @@ if ( isNaN(firstNumber) || isNaN(secondNumber) ) {
     } else {
         alert("Второе число больше первого");
     }
+} else {
+    alert("Введите корретные данные");
 }

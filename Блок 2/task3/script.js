@@ -1,12 +1,19 @@
-let num = 0;
 let result = 0;
 
-while (num != null) {
-    num = prompt("Введите число");
+function sumNumber() {
+    let num = prompt("Введите число");
 
-    if (!isNaN(num) && num != "") {
-        result += Number(num);
+    if (num != null) {
+        if (!isNaN(num) && num != "") {
+            result += parseFloat(num);
+            sumNumber();
+        } else {
+            alert("Введены некорректные данные!");
+            sumNumber();
+        }
+    } else {
+        alert("Сумма: " + result);
     }
 }
 
-alert("Сумма: " + result);
+sumNumber();
